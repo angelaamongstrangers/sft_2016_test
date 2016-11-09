@@ -110,18 +110,14 @@ body {
   position: relative;
   height: 1000px;
   float: right;
-  margin-left: 20px;
-}
-@media only screen and (max-width: 880px) {
-  .wrapper .grid-wrapper {
-    margin: 20px;
-  }
+  margin: 0 20px;
 }
 @media only screen and (max-width: 720px) {
   .wrapper .grid-wrapper {
     max-width: 100%;
-    float: none;
-    margin: 0 auto;
+    width: 100%;
+    display: block;
+    height: auto;
   }
 }
 .wrapper .grid-wrapper__left {
@@ -176,24 +172,36 @@ body {
 .wrapper .grid-wrapper .grid__item .overlay:hover {
   opacity: 0.7;
 }
+@media only screen and (max-width: 720px) {
+  .wrapper .grid-wrapper .grid__item .overlay {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
 .wrapper .grid-wrapper .grid__item .overlay--abs {
   position: absolute;
   padding: 15px;
   top: 68%;
+}
+@media only screen and (max-width: 720px) {
+  .wrapper .grid-wrapper .grid__item .overlay--abs {
+    top: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .wrapper .grid-wrapper .grid__item .overlay--abs {
+    top: 75%;
+    width: 350px;
+  }
 }
 .wrapper .grid-wrapper .grid__item .overlay--abs h1 {
   color: #fff;
   font-size: 3rem;
   margin: 0;
 }
-@media (max-width: 1100px) {
+@media only screen and (max-width: 720px) {
   .wrapper .grid-wrapper .grid__item .overlay--abs h1 {
-    font-size: 2.5rem;
-  }
-}
-@media (max-width: 915px) {
-  .wrapper .grid-wrapper .grid__item .overlay--abs h1 {
-    font-size: 3.5rem;
+    display: none;
   }
 }
 .wrapper .grid-wrapper .grid__item .overlay--abs h5 {
@@ -202,16 +210,6 @@ body {
   font-weight: 100;
   font-size: 1.5rem;
   letter-spacing: 1px;
-}
-@media (max-width: 1100px) {
-  .wrapper .grid-wrapper .grid__item .overlay--abs h5 {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 915px) {
-  .wrapper .grid-wrapper .grid__item .overlay--abs h5 {
-    display: none;
-  }
 }
 .wrapper .grid-wrapper .grid__item--trans {
   background: url(../../img/home/transamerica.jpg) no-repeat;
@@ -238,15 +236,30 @@ body {
   background-size: auto 100%;
   background-position: 70% 50%;
 }
+@media only screen and (max-width: 720px) {
+  .wrapper .grid-wrapper .grid__item--lighthouse {
+    background-position: center;
+  }
+}
 .wrapper .grid-wrapper .grid__item--ferry {
   background: url(../../img/home/ferry.jpg) no-repeat;
   background-size: auto 100%;
   background-position: center;
 }
+@media only screen and (max-width: 720px) {
+  .wrapper .grid-wrapper .grid__item--ferry {
+    background-size: cover;
+  }
+}
 .wrapper .grid-wrapper .grid__item--bridge {
   background: url(../../img/home/ggbridge.jpg) no-repeat;
   background-size: 100%;
   background-position: center;
+}
+@media only screen and (max-width: 720px) {
+  .wrapper .grid-wrapper .grid__item--bridge {
+    background-size: cover;
+  }
 }
 .wrapper .grid-wrapper .grid__item--china {
   background: url(../../img/home/china.jpg) no-repeat;
