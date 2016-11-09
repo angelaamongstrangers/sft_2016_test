@@ -1,0 +1,305 @@
+
+$sft-red: #d44405;
+$sft-grey: #7c8086;
+$beige: #f0f0ee;
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../font/AvenirLTStd-Book.otf') format('woff2'),
+         url('../../font/AvenirLTStd-Heavy.otf') format('woff'),
+         url('../../font/AvenirLTStd-Light.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Avenir', sans-serif;
+  margin: 0;
+  background-color: #f0f0ee;
+}
+
+.main {
+  width: 100%;
+}
+
+.side-menu-wrapper {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 20%;
+  -webkit-backface-visibility: hidden;
+  z-index: 100;
+  display: inline-block;
+  width: 150px;
+  @media only screen and (max-width: 840px) {
+    background-color: #f9f9f7;
+    width: 100px;
+  }
+  img {
+    width: 150px;
+    margin: 40px 0 0 35px;
+    @media only screen and (max-width: 840px) {
+      width: 100px;
+      margin: 40px 0 0 3px;
+    }
+  }
+  ul {
+    margin: 12px;
+    line-height: 2rem;
+    @media only screen and (max-width: 840px) {
+      margin: 12px;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $sft-grey;
+      &:hover {
+        color: $sft-red;
+      }
+      li {
+        list-style: none;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.wrapper-left {
+  width: 34%;
+  @media only screen and (max-width: 840px) {
+    width: 95%;
+    float: right;
+  }
+}
+.wrapper-right {
+  width: 48%;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    z-index: 100;
+    margin-left: 100px;
+    @media only screen and (max-width: 840px) {
+      margin: 0 auto;
+    }
+
+    // global left style
+    .left {
+      width: 340px;
+      min-height: 100;
+      top: 50%;
+      left: 25%;
+      position: relative;
+      @media only screen and (max-width: 1000px) {
+        width: 300px;
+      }
+      @media only screen and (max-width: 990px) {
+        width: 270px;
+      }
+      @media only screen and (max-width: 840px) {
+        height: 430px;
+      }
+
+      &__text {
+        max-width: 100%;
+        margin: 70% auto;
+        width: 350px;
+
+        .mobile-img {
+          display: none;
+          @media only screen and (max-width: 840px) {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        h3 {
+          color: $sft-red;
+          text-transform: uppercase;
+          font-weight: 600;
+          @media only screen and (max-width: 840px) {
+            text-align: center;
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          @media only screen and (max-width: 990px) {
+            font-size: 0.8rem;
+            line-height: 1.9rem !important;
+          }
+        }
+
+        p:first-child {
+          text-align: left;
+          line-height: 2.3rem;
+          color: #7c8086;
+          font-weight: 100;
+          font-size: 0.9rem;
+          @media only screen and (max-width: 840px) {
+            text-align: center;
+          }
+        }
+
+        p:not(:first-child) {
+          text-align: left;
+          line-height: 2rem;
+          color: $sft-grey;
+          font-weight: 100;
+          @media only screen and (max-width: 840px) {
+            text-align: center;
+          }
+        }
+      }
+    }
+    .left1 {
+      @media only screen and (max-width: 840px) {
+        height: 420px;
+      }
+      .left__text {
+        margin: 17% auto;
+      }
+    }
+
+    .left2 {
+      @media only screen and (max-width: 840px) {
+        height: 460px;
+      }
+    }
+
+    .left3,.left5, .left6 {
+      @media only screen and (max-width: 840px) {
+        height: 670px;
+      }
+    }
+    .left4 {
+      @media only screen and (max-width: 840px) {
+        height: 800px;
+      }
+    }
+
+
+
+    //////////////////////
+    .right {
+      @media only screen and (max-width: 840px) {
+      display: none;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        max-width: 100%;
+        width: 365px;
+      }
+      &__gradient {
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 99%,rgba(0,0,0,0.2) 100%);
+        height: 100vh;
+        max-height: 100%;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+      }
+        p {
+        width: 100%;
+        height: 960px;
+        max-height: 100%;
+      }
+    }
+
+}
+
+// global photo style
+.photo {
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+}
+
+.active {
+  width: 100%;
+
+}
+
+// photo styles
+.right1-img {
+  background: url(../../img/content/keythemes/ggbridge.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.right2-img {
+  background: url(../../img/content/keythemes/evolve.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.right3-img {
+  background: url(../../img/content/keythemes/diversity.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.right4-img {
+  background: url(../../img/content/keythemes/arts.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.right5-img {
+  background: url(../../img/content/keythemes/dining.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.right6-img {
+  background: url(../../img/content/keythemes/travel.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+
+#right-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+
+#right-container__second-image.active, #right-container__third-image.active,
+#right-container__fourth-image.active, , #right-container__fifth-image.active,
+, #right-container__sixth-image.active {
+  top:0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+#right-container__second-image, #right-container__third-image,
+#right-container__fourth-image, #right-container__fifth-image,
+#right-container__sixth-image {
+  position: absolute;
+  top: 100rem;
+  left: 0;
+  transition: all 0.6s;
+}
+
+#right-container__second-image {
+  z-index: 111;
+}
+
+#right-container__third-image {
+  z-index: 222;
+}
+
+#right-container__fourth-image {
+  z-index: 333;
+}
+
+#right-container__fifth-image {
+  z-index: 444;
+}
+
+#right-container__sixth-image {
+  z-index: 555;
+}
