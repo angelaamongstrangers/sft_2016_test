@@ -1,0 +1,450 @@
+$sft-red: #d44405;
+$sft-grey: #7c8086;
+$h4: 0.8rem;
+$thinw: 200;
+$medw: 400;
+
+
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../../font/AvenirLTStd-Book.otf') format('woff2'),
+         url('../../font/AvenirLTStd-Heavy.otf') format('woff'),
+         url('../../font/AvenirLTStd-Light.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  font-family: 'Avenir', sans-serif;
+  margin: 0;
+}
+
+.parallax-slider {
+  @media screen and (max-width: 400px) {
+    clear: both;
+    display: block;
+    float: none;
+  }
+}
+
+.wrapper {
+
+  .wrapper__inner {
+
+    // center title: sf travel
+    .title-wrap {
+      padding-left: 50px;
+      position: fixed;
+      z-index: 50;
+      height: 100%;
+      width: 20%;
+      max-width: 100%;
+      background-color: #fff;
+      margin-right: 30px;
+      margin-left: 20px;
+      @media (max-width: 1100px) {
+        padding-left: 20px;
+        margin-right: 50px;
+        display: block;
+      }
+      @media (max-width: 960px) {
+        width: 35%;
+      }
+
+
+        .sft-logo {
+          margin-top: 80px;
+          display: block;
+          max-width: 100%;
+        }
+
+        .intro-wrapper {
+          width: 200px;
+          margin: 0 auto 0 12px;
+          h2, h4, p {
+            line-height: 1rem;
+            font-weight: $medw ;
+          }
+
+          h2, h4 {
+            letter-spacing: 1px;
+            color: $sft-red;
+          }
+
+          h2 {
+            text-transform: uppercase;
+            font-size: 2.15rem;
+          }
+          h4 {
+            font-size: $h4;
+          }
+          p {
+            font-size: 0.7rem;
+            color: $sft-grey;
+          }
+        }
+
+        #table-contents {
+          width: 200px;
+          margin: 0 auto 0 12px;
+
+          h4 {
+            display: inline-block;
+            color: $sft-red;
+            font-weight: $thinw;
+            margin-right: 15px;
+            font-size: $h4;
+          }
+
+          ul {
+            padding: 0;
+            a {
+              text-decoration: none;
+              color: $sft-grey;
+
+
+              li.toc-list__item {
+                list-style: none;
+                line-height: 2rem;
+                font-weight: $thinw;
+                font-size: 0.7rem;
+                span {
+                  color: $sft-red;
+                }
+                &:before {
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 1px;
+                  bottom: 0;
+                  left: 0;
+                  background-color: $sft-red;
+                  visibility: hidden;
+                  transform: scaleX(0);
+                  transition: all 0.2s ease-in-out 0s;
+                }
+                &:hover {
+                  color: $sft-red;
+                }
+                &:hover:before {
+                  visibility: visible;
+                  transform: scaleX(1);
+                }
+              }
+            }
+          } // end of toc-list ul
+        } // end of toc
+
+    }  // end of title-wrap
+
+
+/* clearfix */
+// .grid:after {
+//   content: '';
+//   display: block;
+//   clear: both;
+// }
+
+
+.grid-sizer,
+.grid__item {
+  width: 50%;
+
+}
+
+.grid {
+  width: 75%;
+  float: right;
+  @media (max-width: 1100px) {
+    margin-left: 40px;
+    display: block;
+  }
+  @media (max-width: 620px) {
+    display: none;
+  }
+
+
+  &__right, &__left {
+    width: 47%;
+    float: left;
+    position: relative;
+    @media (max-width: 900px) {
+      width: 100%;
+      float: left;
+      position: relative;
+      display: block;
+      margin: 0
+    }
+  }
+  &__left {
+    margin-right:10px;
+    @media (max-width: 900px) {
+      margin: 0
+    }
+  }
+  &__right {
+    margin-left:10px;
+    @media (max-width: 900px) {
+      margin: 0
+    }
+  }
+
+
+
+  .parallax, .parallax-slider  {
+    @media (max-width: 460px) {
+      display: none !important;
+    }
+  }
+
+
+
+  //photos that are NOT parallax
+  .not-parallax {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__item {
+    width: 100%;
+    margin: 20px;
+    max-width: 1000px;
+    @media (max-width: 1100px) {
+      max-width: 100%;
+    }
+    @media (max-width: 460px) {
+      display: none;
+
+    }
+
+
+    //text hover (global)
+    .overlay {
+      position: relative;
+      margin: 0;
+      transition: all 500ms ease-in-out;
+      opacity: 0;
+      background: rgba(184,184,184,0.04);
+      background: linear-gradient(to bottom, rgba(184,184,184,0.04) 0%, rgba(140,140,140,0.37) 34%, rgba(20,20,20,0.78) 77%, rgba(20,20,20,1) 100%);
+      &:hover {
+        opacity: 0.7;
+      }
+      &--abs {
+        position: absolute;
+
+        h1 {
+          color: #fff;
+          font-size: 3rem;
+          margin: 0;
+          @media (max-width: 1100px) {
+            font-size: 2.5rem;
+          }
+          @media (max-width: 915px) {
+            font-size: 3.5rem;
+          }
+        }
+        h5 {
+          color: #fff;
+          margin: -8px 5px;
+          font-weight: 100;
+          font-size: 1.5rem;
+          letter-spacing: 1px;
+          @media (max-width: 1100px) {
+            font-size: 1.2rem;
+          }
+          @media (max-width: 915px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // 01  Our Manifesto
+    &--trans {
+      height: 600px;
+        // text box hover
+        .overlay {
+          height: 602px;
+          &--abs {
+            text-align: right;
+            top: 75%;
+            right: 5%;
+            @media (max-width: 915px) {
+              text-align: left;
+              left: 20%;
+            }
+          }
+        }
+      }
+
+    // 02 Message from the Chair
+    &--ferry {
+      height: 400px;
+      background: url(img/home/ferry.jpg);
+      // text box hover
+      .overlay {
+        height: 400px;
+        &--abs {
+          top: 65%;
+          left: 5%;
+          @media (max-width: 915px) {
+            left: 20%;
+          }
+
+        }
+      }
+    }
+
+    // 04 Who We Are
+    &--bridge {
+      height: 800px;
+      // text box hover
+      .overlay {
+        height: 802px;
+        &--abs {
+          top: 83%;
+          left: 5%;
+          @media (max-width: 915px) {
+            left: 25%;
+          }
+        }
+      }
+    }
+
+    // 03 Message from the President & CEO
+    &--painted {
+      height: 300px;
+      background: url(img/home/painted.jpg);
+      // text box hover
+      .overlay {
+        height: 300px;
+        &--abs {
+          top: 40%;
+          right: 7%;
+          width: 65%;
+          text-align: right;
+          @media (max-width: 915px) {
+            text-align: left;
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 05 What We Do
+    &--cityhall {
+      height: 500px;
+      background: url(img/home/cityhall.jpg);
+      // text box hover
+      .overlay {
+        height: 500px;
+        &--abs {
+          top: 70%;
+          right: 7%;
+          text-align: right;
+          @media (max-width: 915px) {
+            text-align: left;
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 06 Key Themes
+    &--china {
+      height: 400px;
+      // text box hover
+      .overlay {
+        height: 402px;
+        &--abs {
+          top: 63%;
+          left: 5%;
+          @media (max-width: 915px) {
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 07 How We Measure What We Do
+    &--cupid {
+      height: 650px;
+      // text box hover
+      .overlay {
+        height: 652px;
+        &--abs {
+          top: 70%;
+          right: 8%;
+          width: 55%;
+          text-align: right;
+          @media (max-width: 915px) {
+            text-align: left;
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 08 State of the Industry
+    &--aerial {
+      height: 450px;
+      background: url(img/home/aerial.jpg);
+      // text box hover
+      .overlay {
+        height: 450px;
+        &--abs {
+          top: 66%;
+          left: 6%;
+          width: 80%;
+          @media (max-width: 915px) {
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 09 What We're Up To
+    &--lighthouse {
+      height: 350px;
+      background: url(img/home/lighthouse.jpg);
+      // text box hover
+      .overlay {
+        height: 350px;
+        &--abs {
+          text-align: right;
+          top: 58%;
+          right: 6%;
+          width: 80%;
+          @media (max-width: 915px) {
+            text-align: left;
+            left: 20%;
+          }
+        }
+      }
+    }
+
+    // 10 The Leadership
+    &--museum {
+      height: 350px;
+      background: url(img/home/museum.jpg);
+      // text box hover
+      .overlay {
+        height: 350px;
+        &--abs {
+          top: 58%;
+          left: 7%;
+          text-align: left;
+          width: 80%;
+          @media (max-width: 915px) {
+            left: 20%;
+          }
+        }
+      }
+    }
+
+} //end of grid__item
+
+} // end of grid
+} // end of wrapper__inner
+} //end of wrapper
